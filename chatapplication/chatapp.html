@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Application</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css " rel="stylesheet "
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css'>
+
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0 auto;
+            min-height: 100vh;
+            background-color: #f7f7f7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100vh;
+
+        }
+
+        .wrapper {
+            width: 400px;
+            height: 35rem;
+            border-radius: 10px;
+            box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1),
+                0 32px 64px -48px rgba(0, 0, 0, 0.5);
+            position: relative;
+            margin-bottom: 10rem;
+            display: none;
+
+        }
+
+        /* --------------------------------- */
+
+
+        .profilephoto {
+            width: 3.5rem;
+            height: 3.55rem;
+            background-color: black;
+            border-radius: 50%;
+            margin-right: 15px;
+            background-image: url('uploads/9k=.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .wrapper header,
+        .wrapper section {
+            border-bottom: 1px solid gainsboro;
+            background-color: #ffff;
+            position: relative;
+            border-radius: 10px 10px 0 0;
+            padding-top: 8.5px;
+
+        }
+
+        .wrapper i {
+            font-size: 23px;
+            float: left;
+            position: relative;
+            top: 10px;
+            left: 10px;
+        }
+
+        .wrapper header img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+
+        .userdisplay {
+            display: flex;
+            position: relative;
+            left: 23px;
+        }
+
+        .details span {
+            font-weight: 900;
+            font-size: large;
+            text-transform: capitalize;
+        }
+
+        .chatbox {
+            height: 100%;
+            background-color: #f7f7f7;
+            padding: 20px 24px;
+            overflow-y: auto;
+        }
+        #norecordmessage{
+            text-align: center;
+            font-size: x-large;
+            margin-top: 49%;
+        }
+        .chatbox p {
+            padding: 8px 16px;
+            word-wrap: break-word;
+            max-width: 20rem;
+            box-shadow: 0 0 32px rgba(0, 0, 0, 0.1),
+                0 16px 16px -16px rgba(0, 0, 0, 0.5);
+            /* min-width:calc(100%-130px); */
+
+        }
+
+        .chatbox .chatoutgoing {
+            display: flex;
+            justify-content: end;
+        }
+
+        .chatbox .chatincomming {
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .chatbox .chatoutgoing p {
+            background-color: #333;
+            color: #fff;
+            border-radius: 18px 18px 0 18px;
+        }
+
+        .chatincomming img {
+            width: 37px;
+            height: 37px;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+
+        .chatincomming p {
+            background-color: #fff;
+            color: #333;
+            border-radius: 18px 18px 18px 0;
+        }
+
+        .wrapper section {
+            border-radius: 0;
+            padding: 15px 20px;
+            display: inline-block;
+            width: 100%;
+
+        }
+
+        .wrapper section .w-75 {
+            width: 86% !important;
+            float: left;
+            box-shadow: 0 0 32px rgb(0 0 0 / 5%);
+        }
+
+        .wrapper section .form-group button {
+            width: 12% !important;
+            float: right;
+            background-color: black;
+            padding: 3.7px;
+            border-radius: 5px;
+            color: white;
+            padding: 6px;
+        }
+
+        .wrapper section .form-group button i {
+            position: relative;
+            top: -1.3px;
+            left: 4.1px;
+            font-size: large;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <i class="fas fa-arrow-left" id="backbutton"></i>
+            <div class="userdisplay">
+                <!-- <div class="profilephoto"> </div>
+                <div class="details">
+                    <span>mohammed shahid</span>
+                    <p>Active Now</p>
+                </div> -->
+            </div>
+        </header>
+
+        <div class="chatbox">
+            <!-- <div class="chatoutgoing">
+                <p>It is a long established fact that a reader will be distracted</p>
+            </div>
+
+            <div class="chatincomming">
+                <img src="uploads/images-10.jpg" alt="">
+                <p>It is a long established fact that a reader will be distracted</p>
+            </div>
+            -->
+        </div>
+
+        <section>
+            <div class="form-group ">
+                <input type="text" class="form-control w-75" id="sendmessage" placeholder="Message">
+                <button><i class="fas fa-paper-plane" id="sendchatbutton"></i></button>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $(".wrapper").fadeIn(2000);
+            //back button to home page 
+            $("#backbutton").click(function () {
+                console.log("your clicked");
+                location.href = "homepage.html";
+            });
+
+
+            // it will get the parametere value from the url
+            let getParameter = (key) => {
+                let address = window.location.search;
+                let parameterList = new URLSearchParams(address);
+                return parameterList.get(key);
+            }
+
+            let chatperon = getParameter("Opp_userid");
+            // console.log(chatperon);
+
+            function chatpersonprofile() {
+                $.ajax({
+                    url: "api/chatpersonprofile.php",
+                    type: "POST",
+                    data: { opp_personID: chatperon },
+                    success: function (result) {
+                        // console.log(result);
+                        $(".wrapper .userdisplay").html(result);
+                    }
+                });
+            }
+            chatpersonprofile();
+
+            //to load or get a mesage;
+            function getmessage() {
+                $.ajax({
+                    url: "api/getChatmessages.php",
+                    type:"POST",
+                    data:{chater_id:chatperon},
+                    success: function (chat) {
+                        // console.log(chat);
+                        $(".chatbox").html(chat);
+                    }
+                });
+            }
+            getmessage();
+
+            //to submit a messge or to insert a mesage;
+            $("#sendchatbutton").click(function () {
+                let mymessage = $("#sendmessage").val();
+                console.log(mymessage);
+                $.ajax({
+                    url: "api/insertChatMessage.php",
+                    type: "POST",
+                    data: { senderto_id: chatperon, MESSAGE: mymessage },
+                    success: function (data) {
+                        console.log(data);
+                        $("#sendmessage").val('');
+                        getmessage();
+                    }
+                });
+            });
+
+
+
+        });//end jquery
+    </script>
+</body>
+
+</html>
