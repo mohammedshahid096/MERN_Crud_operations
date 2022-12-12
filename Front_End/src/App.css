@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+body{
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+#adduser input[type="text"]{
+  border: none;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.694);
+  border-radius: 0;
+  transition-property: border-bottom,font-size;
+  transition-duration: 0.5s;
+}
+#adduser input:focus{
+outline: 0;
+box-shadow: none ;
+border-bottom-color: rgb(13,110,253);
+font-size: x-large;
+}
+
+#adduser label{
+  font-size: larger;
+  margin-top: 10px;
+  padding-left: 8px;
+}
+
+/* home page css */
+
+#homepage input{
+  padding: 4px 8px;
+  margin-left: 9px;
+}
